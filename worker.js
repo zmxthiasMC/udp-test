@@ -12,10 +12,10 @@ parentPort.on('message', async ({ address, port, time, thread }) => {
         if (error) {
           console.log(`[ERROR #${thread}] no se pudo enviar paquete a ${address}:${port} [${error}]`)
           clearInterval(task);
-          console.log(`[DDOS #${thread}] Detenido`)
+          console.log(`[DDOS] #${thread}] Detenido`)
           return;
         }
-        console.log(`[DDOS #${thread}] Enviando a ${address}:${port}...`)
+        console.log(`[UDP] #${thread}] Enviando a ${address}:${port}...`)
       });
 
     }, 1)
@@ -23,8 +23,8 @@ parentPort.on('message', async ({ address, port, time, thread }) => {
 
   setTimeout(() => {
     clearInterval(task);
-    console.log(`[DDOS #${thread}] Detenido`)
+    console.log(`[UDP] #${thread}] Detenido`)
   }, 1000 * 60 * time);
 
-  console.log(`[DDOS #${thread}] Comenzando`)
+  console.log(`[UDP] #${thread}] Comenzando`)
 });
