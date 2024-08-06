@@ -35,7 +35,7 @@ console.log(`
 const [node, dir, address, port, threads = 4, time = 5] = process.argv;
 
 if (!address || !port) {
-  return console.log('§c[UDP] Use: \'node . <address> <port> [<threads> (default 4)] [<time> (in minutes)]\'')
+  return console.log('[UDP] Use: \'node . <address> <port> [<threads> (default 4)] [<time> (in minutes)]\'')
 }
 
 for (let i = 0; i < threads; i++) {
