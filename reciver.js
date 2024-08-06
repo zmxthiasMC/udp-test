@@ -19,6 +19,6 @@ client.on('message', (msg, rinfo) => {
 setInterval(() => {
   console.log(`[RECEIVER] ${messages} packets por segundo`)
   messages = 0;
-}, 1000)
+}, 1024)
 
 client.bind(process.argv[2] || 8080);
