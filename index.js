@@ -1,6 +1,6 @@
 const { Worker } = require('worker_threads');
 
-console.log(`       
+console.log(`§a       
             
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⠶⠶⠶⠶⢦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠛⠁⠀⠀⠀⠀⠀⠀⠈⠙⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -35,11 +35,11 @@ console.log(`
 const [node, dir, address, port, threads = 4, time = 5] = process.argv;
 
 if (!address || !port) {
-  return console.log('[ERROR] Use: \'node . <address> <port> [<threads> (default 4)] [<time> (in minutes)]\'')
+  return console.log('§c[UDP] Use: \'node . <address> <port> [<threads> (default 4)] [<time> (in minutes)]\'')
 }
 
 for (let i = 0; i < threads; i++) {
-  console.log(`[UDP] Comenzando thread #${i}...`)
+  console.log(`§a[UDP] Comenzando thread #${i}...`)
 
   const worker = new Worker('./worker.js');
   worker.postMessage({
@@ -50,4 +50,4 @@ for (let i = 0; i < threads; i++) {
   });
 }
 
-console.log("[UDP] Comenzando en 3 segundos...")
+console.log("§a[UDP] Comenzando en 3 segundos...")
